@@ -73,6 +73,19 @@
         <activity android:name=".Library_Activity.Library_6F_Activity"/>
         <activity android:name=".Rena_Activity.Rena_4F_Activity"/>
         <activity android:name=".Rena_Activity.Rena_5F_Activity"/>
+        <activity android:name=".Med_Activity.Med_1F_Activity"/>
+        <activity android:name=".Med_Activity.Med_2F_Activity"/>
+        <activity android:name=".Med_Activity.Med_3F_Activity"/>
+        <activity android:name=".Med_Activity.Med_4F_Activity"/>
+        <activity android:name=".Med_Activity.Med_5F_Activity"/>
+        <activity android:name=".Med_Activity.Med_6F_Activity"/>
+        <activity android:name=".Med_Activity.Med_7F_Activity"/>
+        <activity android:name=".Science_Activity.Science_1F_Activity"/>
+        <activity android:name=".Science_Activity.Science_2F_Activity"/>
+        <activity android:name=".Science_Activity.Science_3F_Activity"/>
+        <activity android:name=".Science_Activity.Science_4F_Activity"/>
+        <activity android:name=".Science_Activity.Science_5F_Activity"/>
+        <activity android:name=".Science_Activity.Science_6F_Activity"/>
         
         <activity
             android:name=".FirstScreenActivity"

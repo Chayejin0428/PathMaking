@@ -1,4 +1,4 @@
-package com.example.myapplication.Baek_Activity;
+package com.example.myapplication.Med_Activity;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import com.suke.widget.SwitchButton;
 
-public class Baek_2F_Activity extends AppCompatActivity {
+public class Med_4F_Activity extends AppCompatActivity {
 
     int flag = 0;
     TextView textview;
@@ -35,7 +35,7 @@ public class Baek_2F_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_baek_2f);
+        setContentView(R.layout.activity_med_4f);
         textview=findViewById(R.id.textView6);
 
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
@@ -49,8 +49,8 @@ public class Baek_2F_Activity extends AppCompatActivity {
         fl2.setVisibility(View.GONE);
 
         final FrameLayout fl3 = (FrameLayout)findViewById(R.id.fl3);
-        FL3View fl3view= new FL3View(fl3.getContext());
-        fl3.addView(fl3view);
+        FL3View fl3Aview= new FL3View(fl3.getContext());
+        fl3.addView(fl3Aview);
         fl3.setVisibility(View.GONE);
 
         final FrameLayout fl4 = (FrameLayout)findViewById(R.id.fl4);
@@ -88,6 +88,21 @@ public class Baek_2F_Activity extends AppCompatActivity {
         fl10.addView(fl10view);
         fl10.setVisibility(View.GONE);
 
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        FL11View fl11view= new FL11View(fl11.getContext());
+        fl11.addView(fl11view);
+        fl11.setVisibility(View.GONE);
+
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        FL12View fl12view= new FL12View(fl12.getContext());
+        fl12.addView(fl12view);
+        fl12.setVisibility(View.GONE);
+
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
+        FL13View fl13view= new FL13View(fl13.getContext());
+        fl13.addView(fl13view);
+        fl13.setVisibility(View.GONE);
+
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         finalView finalview= new finalView(flf.getContext());
         flf.addView(finalview);
@@ -102,7 +117,7 @@ public class Baek_2F_Activity extends AppCompatActivity {
             public void onCheckedChanged(SwitchButton view, boolean isChecked) {
 
                 if(isChecked) {
-                    Toast.makeText(Baek_2F_Activity.this,"모든 대피로", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Med_4F_Activity.this,"모든 대피로", Toast.LENGTH_SHORT).show();
                     prefEditor.putString("checked", "yes");
                     prefEditor.apply();
 
@@ -116,10 +131,13 @@ public class Baek_2F_Activity extends AppCompatActivity {
                     fl8.setVisibility(View.INVISIBLE);
                     fl9.setVisibility(View.INVISIBLE);
                     fl10.setVisibility(View.INVISIBLE);
+                    fl11.setVisibility(View.INVISIBLE);
+                    fl12.setVisibility(View.INVISIBLE);
+                    fl13.setVisibility(View.INVISIBLE);
                     flf.setVisibility(View.VISIBLE);
 
                 } else {
-                    Toast.makeText(Baek_2F_Activity.this,"경로 리셋", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Med_4F_Activity.this,"경로 리셋", Toast.LENGTH_SHORT).show();
                     prefEditor.putString("checked", "false");
                     prefEditor.apply();
 
@@ -133,6 +151,9 @@ public class Baek_2F_Activity extends AppCompatActivity {
                     fl8.setVisibility(View.INVISIBLE);
                     fl9.setVisibility(View.INVISIBLE);
                     fl10.setVisibility(View.INVISIBLE);
+                    fl11.setVisibility(View.INVISIBLE);
+                    fl12.setVisibility(View.INVISIBLE);
+                    fl13.setVisibility(View.INVISIBLE);
                     flf.setVisibility(View.INVISIBLE);
                 }
             }
@@ -144,16 +165,19 @@ public class Baek_2F_Activity extends AppCompatActivity {
             switchButton.setChecked(false);
         }
 
-        moving_201();
-        moving_202();
-        moving_203();
-        moving_204();
-        moving_205();
-        moving_206();
-        moving_207();
-        moving_208();
-        moving_209();
-        moving_210();
+        moving_401();
+        moving_402();
+        moving_403();
+        moving_404();
+        moving_405();
+        moving_406();
+        moving_407();
+        moving_408();
+        moving_409();
+        moving_410();
+        moving_411();
+        moving_412();
+        moving_413();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
@@ -173,10 +197,10 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(1100,450);
-            path.lineTo(1580,450);
-            path.lineTo(1580,580);
-            path.lineTo(1820,580);
+            path.moveTo(350,680);
+            path.lineTo(350,510);
+            path.lineTo(660,510);
+            path.lineTo(660,650);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -198,8 +222,10 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(1110,580);
-            path.lineTo(1820,580);
+            path.moveTo(240,400);
+            path.lineTo(240,510);
+            path.lineTo(660,510);
+            path.lineTo(660,650);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -220,13 +246,10 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(770,730);
-            path.lineTo(770,690);
-            path.lineTo(1100,690);
-            path.lineTo(1100,630);
-            path.lineTo(1580,630);
-            path.lineTo(1580,590);
-            path.lineTo(1820,590);
+            path.moveTo(430,400);
+            path.lineTo(430,510);
+            path.lineTo(660,510);
+            path.lineTo(660,650);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -247,13 +270,8 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(580,730);
-            path.lineTo(580,690);
-            path.lineTo(1100,690);
-            path.lineTo(1100,630);
-            path.lineTo(1580,630);
-            path.lineTo(1580,590);
-            path.lineTo(1820,590);
+            path.moveTo(660,400);
+            path.lineTo(660,650);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -274,13 +292,10 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(460,730);
-            path.lineTo(460,690);
-            path.lineTo(1100,690);
-            path.lineTo(1100,630);
-            path.lineTo(1580,630);
-            path.lineTo(1580,590);
-            path.lineTo(1820,590);
+            path.moveTo(870,400);
+            path.lineTo(870,510);
+            path.lineTo(660,510);
+            path.lineTo(660,650);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -301,12 +316,11 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(350,690);
-            path.lineTo(1100,690);
-            path.lineTo(1100,630);
-            path.lineTo(1580,630);
-            path.lineTo(1580,590);
-            path.lineTo(1820,590);
+            path.moveTo(1070,400);
+            path.lineTo(1070,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -327,12 +341,11 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(350,690);
-            path.lineTo(1100,690);
-            path.lineTo(1100,630);
-            path.lineTo(1580,630);
-            path.lineTo(1580,590);
-            path.lineTo(1820,590);
+            path.moveTo(1270,400);
+            path.lineTo(1270,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -353,11 +366,11 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(200,210);
-            path.lineTo(200,450);
-            path.lineTo(1580,450);
-            path.lineTo(1580,580);
-            path.lineTo(1820,580);
+            path.moveTo(1470,400);
+            path.lineTo(1470,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -378,12 +391,11 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(1070,210);
-            path.lineTo(1000,210);
-            path.lineTo(1000,450);
-            path.lineTo(1580,450);
-            path.lineTo(1580,580);
-            path.lineTo(1820,580);
+            path.moveTo(1700,400);
+            path.lineTo(1700,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -404,12 +416,85 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(1070,330);
-            path.lineTo(1000,330);
-            path.lineTo(1000,450);
-            path.lineTo(1580,450);
-            path.lineTo(1580,580);
-            path.lineTo(1820,580);
+            path.moveTo(1900,400);
+            path.lineTo(1900,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
+
+            canvas.drawPath(path, MyPaint);
+        }
+    }
+
+    public class FL11View extends View {
+        public FL11View(Context context) {
+            super(context);
+        }
+        @Override
+        public void onDraw(Canvas canvas) {
+            canvas.drawColor(Color.TRANSPARENT);
+            Paint MyPaint = new Paint();
+            MyPaint.setARGB(255,0,0,0);
+            MyPaint.setPathEffect(new DashPathEffect(new float[]{25,40},0));
+            MyPaint.setStrokeWidth(10f);
+            MyPaint.setStyle(Paint.Style.STROKE);
+            MyPaint.setColor(Color.GREEN);
+
+            Path path = new Path();
+            path.moveTo(1800,680);
+            path.lineTo(1800,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
+
+            canvas.drawPath(path, MyPaint);
+        }
+    }
+
+    public class FL12View extends View {
+        public FL12View(Context context) {
+            super(context);
+        }
+        @Override
+        public void onDraw(Canvas canvas) {
+            canvas.drawColor(Color.TRANSPARENT);
+            Paint MyPaint = new Paint();
+            MyPaint.setARGB(255,0,0,0);
+            MyPaint.setPathEffect(new DashPathEffect(new float[]{25,40},0));
+            MyPaint.setStrokeWidth(10f);
+            MyPaint.setStyle(Paint.Style.STROKE);
+            MyPaint.setColor(Color.GREEN);
+
+            Path path = new Path();
+            path.moveTo(1140,680);
+            path.lineTo(1140,510);
+            path.lineTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
+
+            canvas.drawPath(path, MyPaint);
+        }
+    }
+
+    public class FL13View extends View {
+        public FL13View(Context context) {
+            super(context);
+        }
+        @Override
+        public void onDraw(Canvas canvas) {
+            canvas.drawColor(Color.TRANSPARENT);
+            Paint MyPaint = new Paint();
+            MyPaint.setARGB(255,0,0,0);
+            MyPaint.setPathEffect(new DashPathEffect(new float[]{25,40},0));
+            MyPaint.setStrokeWidth(10f);
+            MyPaint.setStyle(Paint.Style.STROKE);
+            MyPaint.setColor(Color.GREEN);
+
+            Path path = new Path();
+            path.moveTo(1020,680);
+            path.lineTo(1020,510);
+            path.lineTo(660,510);
+            path.lineTo(660,650);
 
             canvas.drawPath(path, MyPaint);
         }
@@ -430,42 +515,24 @@ public class Baek_2F_Activity extends AppCompatActivity {
             MyPaint.setColor(Color.GREEN);
 
             Path path = new Path();
-            path.moveTo(350,450);
-            path.lineTo(1250,450);
-            path.lineTo(1250,750);
+            path.moveTo(240,510);
+            path.lineTo(1900,510);
 
-            path.moveTo(350,690);
-            path.lineTo(1100,690);
+            path.moveTo(660,510);
+            path.lineTo(660,650);
 
-            path.moveTo(450,450);
-            path.lineTo(450,690);
+            path.moveTo(1370,510);
+            path.lineTo(1370,620);
+            path.lineTo(1470,620);
 
-            path.moveTo(900,450);
-            path.lineTo(900,690);
-
-            path.moveTo(1250,450);
-            path.lineTo(1280,450);
-            path.lineTo(1280,300);
-            path.lineTo(1180,300);
-
-            path.moveTo(1280,450);
-            path.lineTo(1580,450);
-            path.lineTo(1580,580);
-            path.lineTo(1820,580);
-
-            path.moveTo(1580,450);
-            path.lineTo(1580,420);
-            path.lineTo(1720,420);
-            path.lineTo(1800,420);
-            path.lineTo(1800,280);
 
             canvas.drawPath(path, MyPaint);
         }
     }
 
-    // 201호에서 최단거리 이동
-    private void moving_201() {
-        final Button b = (Button) findViewById(R.id.b_201);
+    // 401호에서 최단거리 이동
+    private void moving_401() {
+        final Button b = (Button) findViewById(R.id.med_401);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -477,17 +544,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  1050, 1530, 1530, 1770); //x 좌표
-                animation1.setDuration(1800);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  300, 300, 610, 610); //x 좌표
+                animation1.setDuration(1600);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  400, 400, 530, 530); //y 좌표
-                animation3.setDuration(1800);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  630, 460, 460, 600); //y 좌표
+                animation3.setDuration(1600);
                 animation3.start();
 
                 fl1.setVisibility(View.VISIBLE);
@@ -500,15 +570,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    // 202호에서 최단거리 이동
-    private void moving_202() {
-        final Button b = (Button) findViewById(R.id.b_202);
+    // 402호에서 최단거리 이동
+    private void moving_402() {
+        final Button b = (Button) findViewById(R.id.med_402);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -520,17 +593,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  1060, 1770); //x 좌표
-                animation1.setDuration(1800);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  190, 190, 610, 610); //x 좌표
+                animation1.setDuration(1900);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  530, 530); //y 좌표
-                animation3.setDuration(1800);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  350, 460, 460, 600); //y 좌표
+                animation3.setDuration(1900);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -543,15 +619,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //203호에서 최단거리 이동
-    private void moving_203() {
-        final Button button = (Button) findViewById(R.id.b_203);
+    //403호에서 최단거리 이동
+    private void moving_403() {
+        final Button button = (Button) findViewById(R.id.med_403);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -563,17 +642,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  720, 720, 1050, 1050, 1530, 1530, 1770);
-                animation1.setDuration(2100);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  380, 380, 610, 610);
+                animation1.setDuration(2300);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  670, 630, 630, 570, 570, 530, 530);
-                animation3.setDuration(2100);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  350, 460, 460, 600);
+                animation3.setDuration(2300);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -586,15 +668,19 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //204호에서 최단거리 이동
-    private void moving_204() {
-        final Button button = (Button) findViewById(R.id.b_204);
+
+    //404호에서 최단거리 이동
+    private void moving_404() {
+        final Button button = (Button) findViewById(R.id.med_404);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -606,17 +692,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 530, 530, 1050, 1050, 1530, 1530, 1770);
-                animation1.setDuration(2300);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 610, 610);
+                animation1.setDuration(2600);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  670, 630, 630, 570, 570, 530, 530);
-                animation3.setDuration(2300);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 600);
+                animation3.setDuration(2600);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -629,15 +718,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //205호에서 최단거리 이동
-    private void moving_205() {
-        final Button button = (Button) findViewById(R.id.b_205);
+    //405호에서 최단거리 이동
+    private void moving_405() {
+        final Button button = (Button) findViewById(R.id.med_405);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -649,16 +741,19 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 410, 410, 1050, 1050, 1530, 1530, 1770);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 820, 820, 610, 610);
                 animation1.setDuration(2300);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 670, 630, 630, 570, 570, 530, 530);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 460, 460, 600);
                 animation3.setDuration(2300);
                 animation3.start();
 
@@ -672,15 +767,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //206호에서 최단거리 이동
-    private void moving_206() {
-        final Button button = (Button) findViewById(R.id.b_206);
+    //406호에서 최단거리 이동
+    private void moving_406() {
+        final Button button = (Button) findViewById(R.id.med_406);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -692,17 +790,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  300, 1050, 1050, 1530, 1530, 1770);
-                animation1.setDuration(2300);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1020, 1020, 1320, 1320, 1420);
+                animation1.setDuration(1900);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  630, 630, 570, 570, 530, 530);
-                animation3.setDuration(2300);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 460, 460, 570, 570);
+                animation3.setDuration(1900);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -715,15 +816,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //207호에서 최단거리 이동
-    private void moving_207() {
-        final Button button = (Button) findViewById(R.id.b_207);
+    //407호에서 최단거리 이동
+    private void moving_407() {
+        final Button button = (Button) findViewById(R.id.med_407);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -735,17 +839,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 300, 1050, 1050, 1530, 1530, 1770);
-                animation1.setDuration(2500);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1220, 1220, 1320, 1320, 1420);
+                animation1.setDuration(1900);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 630, 630, 570, 570, 530, 530);
-                animation3.setDuration(2500);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 460, 460, 570, 570);
+                animation3.setDuration(1900);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -758,15 +865,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //208호에서 최단거리 이동
-    private void moving_208() {
-        final Button button = (Button) findViewById(R.id.b_208);
+    //408호에서 최단거리 이동
+    private void moving_408() {
+        final Button button = (Button) findViewById(R.id.med_408);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -778,17 +888,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 150, 150, 1530, 1530, 1770);
-                animation1.setDuration(2500);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1420, 1420, 1320, 1320, 1420);
+                animation1.setDuration(1900);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 160, 400, 400, 530, 530);
-                animation3.setDuration(2500);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 460, 460, 570, 570);
+                animation3.setDuration(1900);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -801,15 +914,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.VISIBLE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //209호에서 최단거리 이동
-    private void moving_209() {
-        final Button button = (Button) findViewById(R.id.b_209);
+    //409호에서 최단거리 이동
+    private void moving_409() {
+        final Button button = (Button) findViewById(R.id.med_409);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -821,17 +937,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1020, 950, 950, 1530, 1530, 1770);
-                animation1.setDuration(2000);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1650, 1650, 1320, 1320, 1420);
+                animation1.setDuration(1500);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 160, 160, 400, 400, 530, 530);
-                animation3.setDuration(2000);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 460, 460, 570, 570);
+                animation3.setDuration(1500);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -844,15 +963,18 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.VISIBLE);
                 fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
                 flf.setVisibility(View.GONE);
 
             }
         });
     }
 
-    //210호에서 최단거리 이동
-    private void moving_210() {
-        final Button button = (Button) findViewById(R.id.b_210);
+    //410호에서 최단거리 이동
+    private void moving_410() {
+        final Button button = (Button) findViewById(R.id.med_410);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
         final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
@@ -864,17 +986,20 @@ public class Baek_2F_Activity extends AppCompatActivity {
         final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
         final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
         final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
         final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1020, 950, 950, 1530, 1530, 1770);
-                animation1.setDuration(1900);
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1850, 1850, 1320, 1320, 1420);
+                animation1.setDuration(1500);
                 animation1.start();
 
-                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 280, 280, 400, 400, 530, 530);
-                animation3.setDuration(1900);
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 350, 460, 460, 570, 570);
+                animation3.setDuration(1500);
                 animation3.start();
 
                 fl1.setVisibility(View.GONE);
@@ -887,6 +1012,156 @@ public class Baek_2F_Activity extends AppCompatActivity {
                 fl8.setVisibility(View.GONE);
                 fl9.setVisibility(View.GONE);
                 fl10.setVisibility(View.VISIBLE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
+                flf.setVisibility(View.GONE);
+
+            }
+        });
+    }
+
+    //411호에서 최단거리 이동
+    private void moving_411() {
+        final Button button = (Button) findViewById(R.id.med_411);
+        final ImageView iv = (ImageView) findViewById(R.id.imageView1);
+        final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
+        final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
+        final FrameLayout fl3 = (FrameLayout)findViewById(R.id.fl3);
+        final FrameLayout fl4 = (FrameLayout)findViewById(R.id.fl4);
+        final FrameLayout fl5 = (FrameLayout)findViewById(R.id.fl5);
+        final FrameLayout fl6 = (FrameLayout)findViewById(R.id.fl6);
+        final FrameLayout fl7 = (FrameLayout)findViewById(R.id.fl7);
+        final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
+        final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
+        final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
+        final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1750, 1750, 1320, 1320, 1420);
+                animation1.setDuration(1900);
+                animation1.start();
+
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 630, 460, 460, 570, 570);
+                animation3.setDuration(1900);
+                animation3.start();
+
+                fl1.setVisibility(View.GONE);
+                fl2.setVisibility(View.GONE);
+                fl3.setVisibility(View.GONE);
+                fl4.setVisibility(View.GONE);
+                fl5.setVisibility(View.GONE);
+                fl6.setVisibility(View.GONE);
+                fl7.setVisibility(View.GONE);
+                fl8.setVisibility(View.GONE);
+                fl9.setVisibility(View.GONE);
+                fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.VISIBLE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.GONE);
+                flf.setVisibility(View.GONE);
+
+            }
+        });
+    }
+
+    //412호에서 최단거리 이동
+    private void moving_412() {
+        final Button button = (Button) findViewById(R.id.med_412);
+        final ImageView iv = (ImageView) findViewById(R.id.imageView1);
+        final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
+        final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
+        final FrameLayout fl3 = (FrameLayout)findViewById(R.id.fl3);
+        final FrameLayout fl4 = (FrameLayout)findViewById(R.id.fl4);
+        final FrameLayout fl5 = (FrameLayout)findViewById(R.id.fl5);
+        final FrameLayout fl6 = (FrameLayout)findViewById(R.id.fl6);
+        final FrameLayout fl7 = (FrameLayout)findViewById(R.id.fl7);
+        final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
+        final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
+        final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
+        final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1090, 1090, 1320, 1320, 1420);
+                animation1.setDuration(1800);
+                animation1.start();
+
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 630, 460, 460, 570, 570);
+                animation3.setDuration(1800);
+                animation3.start();
+
+                fl1.setVisibility(View.GONE);
+                fl2.setVisibility(View.GONE);
+                fl3.setVisibility(View.GONE);
+                fl4.setVisibility(View.GONE);
+                fl5.setVisibility(View.GONE);
+                fl6.setVisibility(View.GONE);
+                fl7.setVisibility(View.GONE);
+                fl8.setVisibility(View.GONE);
+                fl9.setVisibility(View.GONE);
+                fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.VISIBLE);
+                fl13.setVisibility(View.GONE);
+                flf.setVisibility(View.GONE);
+
+            }
+        });
+    }
+
+    //413호에서 최단거리 이동
+    private void moving_413() {
+        final Button button = (Button) findViewById(R.id.med_413);
+        final ImageView iv = (ImageView) findViewById(R.id.imageView1);
+        final FrameLayout fl1 = (FrameLayout)findViewById(R.id.fl1);
+        final FrameLayout fl2 = (FrameLayout)findViewById(R.id.fl2);
+        final FrameLayout fl3 = (FrameLayout)findViewById(R.id.fl3);
+        final FrameLayout fl4 = (FrameLayout)findViewById(R.id.fl4);
+        final FrameLayout fl5 = (FrameLayout)findViewById(R.id.fl5);
+        final FrameLayout fl6 = (FrameLayout)findViewById(R.id.fl6);
+        final FrameLayout fl7 = (FrameLayout)findViewById(R.id.fl7);
+        final FrameLayout fl8 = (FrameLayout)findViewById(R.id.fl8);
+        final FrameLayout fl9 = (FrameLayout)findViewById(R.id.fl9);
+        final FrameLayout fl10 = (FrameLayout)findViewById(R.id.fl10);
+        final FrameLayout fl11 = (FrameLayout)findViewById(R.id.fl11);
+        final FrameLayout fl12 = (FrameLayout)findViewById(R.id.fl12);
+        final FrameLayout fl13 = (FrameLayout)findViewById(R.id.fl13);
+        final FrameLayout flf = (FrameLayout)findViewById(R.id.flf);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 970, 970, 610, 610);
+                animation1.setDuration(1300);
+                animation1.start();
+
+                ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 630, 460, 460, 600);
+                animation3.setDuration(1300);
+                animation3.start();
+
+                fl1.setVisibility(View.GONE);
+                fl2.setVisibility(View.GONE);
+                fl3.setVisibility(View.GONE);
+                fl4.setVisibility(View.GONE);
+                fl5.setVisibility(View.GONE);
+                fl6.setVisibility(View.GONE);
+                fl7.setVisibility(View.GONE);
+                fl8.setVisibility(View.GONE);
+                fl9.setVisibility(View.GONE);
+                fl10.setVisibility(View.GONE);
+                fl11.setVisibility(View.GONE);
+                fl12.setVisibility(View.GONE);
+                fl13.setVisibility(View.VISIBLE);
                 flf.setVisibility(View.GONE);
 
             }

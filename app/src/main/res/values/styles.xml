@@ -9,7 +9,7 @@
     </style>
 
     <style name="FirstScreenTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <item name="android:windowBackground">@drawable/firstscreen</item>
+        <item name="android:windowBackground">@drawable/firstscreen_2</item>
     </style>
 
 </resources>

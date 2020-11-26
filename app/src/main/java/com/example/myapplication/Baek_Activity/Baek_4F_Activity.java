@@ -222,7 +222,6 @@ public class Baek_4F_Activity extends AppCompatActivity {
         }
     }
 
-
     public class FL2View extends View {
         public FL2View(Context context) {
             super(context);

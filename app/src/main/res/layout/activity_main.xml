@@ -24,55 +24,71 @@
             android:layout_height="match_parent"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-        //상단 구해조 부분
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/heder_background"
-            android:gravity="center">
+            android:layout_height="120dp"
+            android:orientation="vertical"
+            android:background="#ffffff">
 
-            //메뉴 전체
-            <LinearLayout
-                android:id="@+id/layout_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:clickable="true">
-
-                <ImageView
-                    android:layout_width="40sp"
-                    android:layout_height="40sp"
-                    android:src="@drawable/baseline_menu_black_24dp" />
-
-                //메뉴 이미지
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:hint="Enter the Address.          "
-                android:layout_marginRight="5dp"/>
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:autoText="false"
-                android:text="검색"
-                android:background="@drawable/main_item_button"
-                android:fontFamily="@font/nanum_eb"
-                android:textSize="13sp"
-                android:visibility="visible" />
+                android:fontFamily="@font/nanum_b"
+                android:gravity="center"
+                android:text="숙명여대 비상구 위치 안내"
+                android:textColor="#51b778"
+                android:textSize="15dp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/heder_background"
+                android:elevation="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                //메뉴 전체
+                <LinearLayout
+                    android:id="@+id/layout_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true">
+                    //메뉴 이미지
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35sp"
+                        android:src="@drawable/baseline_menu_black_24dp"></ImageView>
+                </LinearLayout>
+                //검색창
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:hint="건물명, 주소를 입력하세요      "
+                    android:fontFamily="@font/nanum_r"
+                    android:layout_marginRight="5dp"/>
+                //검색 그림
+                <LinearLayout
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/baseline_search_black_18dp"></ImageView>
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
 
-        //하단의 초록색 전체
 
         <LinearLayout
             android:id="@+id/layout_bottom"
@@ -83,7 +99,6 @@
             android:orientation="vertical">
 
             //나가기 그림 모양 전부
-
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="60dp"
@@ -97,9 +112,7 @@
                 android:text="나가기"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp" />
-
         </LinearLayout>
-
     </RelativeLayout>
 
     //서랍
